@@ -1,0 +1,17 @@
+.App {
+  background-color: #191919;
+
+  min-height: 100vh;
+}
+
+.new-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.main {
+  max-width: 736px;
+  margin: 0 auto;
+}

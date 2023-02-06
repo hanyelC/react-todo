@@ -1,0 +1,29 @@
+.header {
+  background-color: var(--gray-700);
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.purple {
+  color: var(--purple-dark);
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.2rem;
+}
