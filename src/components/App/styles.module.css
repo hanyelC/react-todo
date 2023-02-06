@@ -14,7 +14,7 @@
 
 .main {
   max-width: 736px;
-  margin: 0 auto;
+  margin: -2.6rem auto 0;
 }
 
 .tasks-header {
