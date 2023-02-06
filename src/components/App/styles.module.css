@@ -9,9 +9,39 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
+  margin-bottom: 6.4rem;
 }
 
 .main {
   max-width: 736px;
   margin: 0 auto;
+}
+
+.tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tasks-header div {
+  font-weight: 700;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tasks-header div:first-child span:first-child {
+  color: var(--blue);
+}
+
+.tasks-header div:last-child span:first-child {
+  color: var(--purple);
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }

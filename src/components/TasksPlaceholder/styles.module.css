@@ -1,0 +1,21 @@
+.tasks-placeholder {
+  padding: 6.4rem 2.4rem;
+  text-align: center;
+  border-top: 1px solid var(--gray-400);
+}
+
+.tasks-placeholder > img:first-child {
+  margin-bottom: 1.6rem;
+}
+
+.tasks-placeholder > div:last-child {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--gray-300);
+}
+
+.tasks-placeholder > div:last-child strong {
+  font-weight: 700;
+}
