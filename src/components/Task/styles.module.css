@@ -1,0 +1,22 @@
+.task {
+  background-color: var(--gray-500);
+  padding: 1.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--gray-100);
+
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.task > span {
+  width: 100%;
+}
+
+.task-done {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}

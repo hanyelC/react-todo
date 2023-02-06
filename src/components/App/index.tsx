@@ -1,6 +1,7 @@
 import { CreateButton } from '../CreateButton';
 import { Header } from '../Header';
 import { Input } from '../Input';
+import { Task } from '../Task';
 import { TasksPlaceholder } from '../TasksPlaceholder';
 import styles from './styles.module.css';
 
@@ -21,10 +22,16 @@ export function App() {
             </div>
             <div>
               <span>Concluídas</span>
-              <span className={styles.counter}>0</span>
+              <span className={styles.counter}>0 de 0</span>
             </div>
           </div>
-          <TasksPlaceholder />
+          {/* <TasksPlaceholder /> */}
+          <div className={styles['tasks-list']}>
+            <Task done />
+            <Task />
+            <Task done />
+            <Task />
+          </div>
         </div>
       </main>
     </div>
