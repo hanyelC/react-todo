@@ -1,7 +1,14 @@
-import styles from './styles.module.css'
+import { InputHTMLAttributes } from 'react';
+import styles from './styles.module.css';
 
-export function Input () {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {}
+
+export function Input({ ...props }: Props) {
   return (
-    <input className={styles.input} placeholder="Adicione uma nova tarefa" />
-  )
+    <input
+      className={styles.input}
+      placeholder={props.placeholder ?? 'Adicione uma nova tarefa'}
+      {...props}
+    />
+  );
 }
