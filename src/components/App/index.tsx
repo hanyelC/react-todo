@@ -104,19 +104,21 @@ export function App() {
             </div>
           </div>
           {tasks.length > 0 ? (
-            tasks.map((task) => (
-              <Task
-                key={task.id}
-                done={task.done}
-                onRemoveTask={() => {
-                  handleRemoveTask(task.id);
-                }}
-                onToggleTask={() => {
-                  handleToggleTask(task.id);
-                }}
-                text={task.text}
-              />
-            ))
+            <div className={styles['tasks-list']}>
+              {tasks.map((task) => (
+                <Task
+                  key={task.id}
+                  done={task.done}
+                  onRemoveTask={() => {
+                    handleRemoveTask(task.id);
+                  }}
+                  onToggleTask={() => {
+                    handleToggleTask(task.id);
+                  }}
+                  text={task.text}
+                />
+              ))}
+            </div>
           ) : (
             <TasksPlaceholder />
           )}
