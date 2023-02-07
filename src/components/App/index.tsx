@@ -16,6 +16,12 @@ export function App() {
   const [tasks, setTasks] = useState<TaskData[]>([]);
   const [newTaskValue, setNewTaskValue] = useState<string>('');
 
+  const orderedTasks = [...tasks].sort((a, b) => {
+    console.log(a, b)
+    if (!a.done && b.done) return -1;
+    return 0;
+  });
+
   const totalOfTasks = tasks.length;
 
   const totalOfDoneTasks = tasks.reduce((accumulator, { done }) => {
@@ -105,7 +111,7 @@ export function App() {
           </div>
           {tasks.length > 0 ? (
             <div className={styles['tasks-list']}>
-              {tasks.map((task) => (
+              {orderedTasks.map((task) => (
                 <Task
                   key={task.id}
                   done={task.done}
