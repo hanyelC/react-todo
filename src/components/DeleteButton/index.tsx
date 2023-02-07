@@ -1,10 +1,13 @@
-import styles from './styles.module.css'
-import { Trash } from '../../assets/trash'
+import { ButtonHTMLAttributes } from 'react';
+import styles from './styles.module.css';
+import { Trash } from '../../assets/trash';
 
-export function DeleteButton() {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export function DeleteButton({ ...props }: Props) {
   return (
-    <button className={styles['delete-button']}>
+    <button className={styles['delete-button']} {...props}>
       <Trash />
     </button>
-  )
+  );
 }
