@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CreateButton } from '../CreateButton';
 import { Header } from '../Header';
 import { Input } from '../Input';
@@ -34,13 +34,19 @@ export function App() {
       text: newTaskValue
     };
 
-    setTasks((prevState) => [...prevState, newTask]);
+    const updatedTasks = [newTask, ...tasks];
+
+    saveTasksToLocalStorage(updatedTasks);
+    setTasks(updatedTasks);
 
     setNewTaskValue('');
   };
 
   const handleRemoveTask = (taskId: string) => {
-    setTasks((prevState) => prevState.filter((task) => task.id !== taskId));
+    const updatedTasks = tasks.filter((task) => task.id !== taskId);
+
+    saveTasksToLocalStorage(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   const handleToggleTask = (taskId: string) => {
@@ -50,8 +56,27 @@ export function App() {
       return task;
     });
 
+    saveTasksToLocalStorage(updatedTasks);
     setTasks(updatedTasks);
   };
+
+  const tasksLocalStorageKey = '@TASKS';
+
+  const saveTasksToLocalStorage = (tasks: TaskData[]) => {
+    localStorage.setItem(tasksLocalStorageKey, JSON.stringify(tasks));
+  };
+
+  const getTasksFromLocalStorage = () => {
+    const tasks = localStorage.getItem(tasksLocalStorageKey) ?? '[]';
+
+    return JSON.parse(tasks);
+  };
+
+  useEffect(() => {
+    const tasks = getTasksFromLocalStorage();
+
+    setTasks(tasks);
+  }, []);
 
   return (
     <div className={styles.App}>
