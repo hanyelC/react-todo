@@ -1,10 +1,13 @@
+import { InputHTMLAttributes } from 'react';
 import styles from './styles.module.css';
 
-export function Checkbox() {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {}
+
+export function Checkbox({ ...props }: Props) {
   return (
     <label className={styles['checkbox-container']}>
-      <input type="checkbox" />
-      <div className={styles.checkmark}></div>
+      <input type="checkbox" {...props} />
+      <div className={styles.checkmark} />
     </label>
   );
 }
